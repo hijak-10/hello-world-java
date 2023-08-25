@@ -32,3 +32,6 @@ jobs:
       
     - name: Build Docker Image
       run: docker build -t hijak-10/hello-world-java:0.0.1.Realease .
+ 
+    - name: Push Docker Image
+      run: docker push hijak-10/hello-world-java:0.0.1.Realease .      
