@@ -38,6 +38,9 @@ jobs:
       with:
         username: ${{ secrets.NAME }}
         password: ${{ secrets.PASS }}  
+
+    - name: login again
+      run: docker login -u "hijakjakhmola" -p "Great guy@89" docker.io
  
     - name: Push Docker Image
       run: docker push hijak-10/hello-world-java:0.0.1.Release    
