@@ -29,15 +29,13 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-      
-    - name: Build Docker Image
-      run: docker build -t hijak-10/hello-world-java:0.0.1.Release .
-
     - name: Login to Docker
       uses: docker/login-action@V1
       with:
             username: ${{secrets.NAME}}
-            password: ${{secrets.PASS}}
- 
+            password: ${{secrets.PASS}}      
+    - name: Build Docker Image
+      run: docker build -t himanshujakhmola/hello-world-java:0.0.1.Release .
+
     - name: Push Docker Image
-      run: docker push hijak-10/hello-world-java:latest    
+      run: docker push himanshujakhmola/hello-world-java:latest    
