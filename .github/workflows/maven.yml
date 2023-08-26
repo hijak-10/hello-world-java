@@ -32,12 +32,12 @@ jobs:
       
     - name: Build Docker Image
       run: docker build -t hijak-10/hello-world-java:0.0.1.Release .
-    
-    - name: Login to Docker Hub
-      run: docker login -u hijakjakhmola -p Great guy@89
 
-
-
+    - name: Login to Docker
+      uses: docker/login-action@V1
+      with:
+            username: ${{secrets.NAME}}
+            password: ${{secrets.PASS}}
  
     - name: Push Docker Image
-      run: docker push hijak-10/hello-world-java:0.0.1.Release    
+      run: docker push hijak-10/hello-world-java:latest    
