@@ -39,4 +39,4 @@ jobs:
         username: ${{ secrets.NAME }}
         password: ${{ secrets.PASS }}
     - name: Push Docker Image
-      run: docker push hijak-10/hello-world-java:0.0.1.Release           
+      run: docker push hijak-10/hello-world-java:lastest          
